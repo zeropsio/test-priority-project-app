@@ -1,0 +1,10 @@
+app:
+  build:
+    base: [go@1]
+    build:
+      - apt-get update
+      - apt-get install -y redis-tools
+      - go build -o app main.go
+    deploy: [app]
+  run:
+    start: ./app
