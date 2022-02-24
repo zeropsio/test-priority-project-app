@@ -4,6 +4,7 @@ app:
     build:
       - apt-get update
       - apt-get install -y redis-tools
+      - redis-cli -h db -n 1 set key_as_never_seen_before lets_get_this_party_started
       - go build -o app main.go
     deploy: [app]
   run:
